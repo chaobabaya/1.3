@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米官网</title>
+    <link rel="stylesheet" href="css/小米官网.css" type="text/css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463071_0tnkfz3km52j.css">
+</head>
+<body>
+<div id="header">
+    <a href=""><div class="con">
+        <ul class="box">
+            <li class="b">
+                <a href="#">小米商城</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">MIUI</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">LOT</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">云服务</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">金融</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">有品</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">小爱开放平台</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">企业团购</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">资质证照</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">协议规则</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">下载app</a><span>|</span>
+            </li>
+            <li class="b">
+                <a href="#">SelectLocation</a>
+            </li>
+            <li class="d">
+                <a href="#">
+                    <div class="d-icon">
+                        <i class="iconfont icon-gouwuchekong"></i>购物车(0)
+                    </div>
+                </a>
+                <div class="d-icon1">购物车还没有商品，赶紧选购吧。</div>
+            </li>
+            <li class="c">
+                <a href="#">消息通知</a>
+            </li>
+            <li class="c">
+                <a href="#">注册</a><span>|</span>
+            </li>
+            <li class="c">
+                <a href="#">登录</a><span>|</span>
+            </li>
+        </ul>
+    </div></a>
+</div>
+<div class="white">
+    <div class="body bodyBox">
+        <div class="nav">
+            <a href="#"><img src="img/logo.png"></a>
+            <ul class="nav1">
+                <li class="nav2"><a href="#">小米手机</a></li>
+                <li class="nav2"><a href="#">Redmi红米</a></li>
+                <li class="nav2"><a href="#">电视</a></li>
+                <li class="nav2"><a href="#">笔记本</a></li>
+                <li class="nav2"><a href="#">家电</a></li>
+                <li class="nav2"><a href="#">路由器</a></li>
+                <li class="nav2"><a href="#">智能硬件</a></li>
+                <li class="nav2"><a href="#">服务</a></li>
+                <li class="nav2"><a href="#">社区</a></li>
+            </ul>
+            <div class="in">
+                <div class="textA">
+                    <input type="text" name="" value="">
+                    <a href="#"><span class="tex">小米9 pro 5G</span></a>
+                    <a href="#"><span class="tex2">Redmi Note 8</span></a>
+                </div>
+                <a href="#">
+                    <div class="sousuo"><i class="iconfont icon-iconfontshouyezhuyetubiao05"></i></div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="bannerBox">
+            <ul class="banner">。
+                <li class="bannerImg1 "><img src="imgbanner/1.jpg"></li>
+                <li class="bannerImg2 "><img src="imgbanner/2.jpg"></li>
+                <li class="bannerImg3 "><img src="imgbanner/3.jpg"></li>
+                <li class="bannerImg4 "><img src="imgbanner/4.jpg"></li>
+                <li class="bannerImg5 "><img src="imgbanner/5.jpg"></li>
+            </ul>
+            <script>
+            let imgList = document.querySelectorAll(".banner li");
+            let inner = document.querySelector(".bannerBox");
+            let arrowRight = document.querySelector(".iconfont icon-jiantou1");
+            let arrowLeft = document.querySelector(".iconfont icon-jiantou2");
+            let page = document.querySelectorAll(" .rotationPoint li ");
+            let index = 0;
+            let timer = setInterval(run, 2000);
+            page[0].style.background = "black";
+            inner.onmouseover = (function () {
+            clearInterval(timer);
+            });
+            inner.onmouseout = (function () {
+            timer = setInterval(run, 2000);
+            });
+            function run() {
+            index++;
+            if (index > 4) {
+            index = 0;
+            }
+            for (let i = 0; i < imgList.length; i++) {
+            imgList[i].style.opacity = "0";
+            page[i].style.background = "white";
+            }
+            imgList[index].style.opacity = "1";
+            page[index].style.background = "black";
+            }
+            arrowRight.onclick = function () {
+            for (let i = 0; i < imgList.length; i++) {
+            imgList[i].style.opacity = "0";
+            page[i].style.background="white";
+            }
+            if (index >= 4) {
+            index = 0;
+            } else {
+            index++;
+            }
+            imgList[index].style.opacity = "1";
+            page[index].style.background="black";
+            };
+            arrowLeft.onclick = function () {
+            for (let i = 0; i < imgList.length; i++) {
+            imgList[i].style.opacity = "0";
+            page[i].style.background="white";
+            }
+            if (index == 0) {
+            index = 4;
+            } else {
+            index--;
+            }
+            imgList[index].style.opacity = "1";
+            page[index].style.background="black";
+            };
+            for (let j = 0; j < page.length; j++) {
+            page[j].onclick = function () {
+            for (let i = 0; i < imgList.length; i++) {
+            imgList[i].style.opacity = "0";
+            page[i].style.background = "white";
+            }
+            imgList[j].style.opacity = "1";
+            page[j].style.background = "black";
+            }
+            }
+            </script>
+            <ul class="bannerNav">
+                <li class="bannerNav1"><a href="#">手机 电话卡<i class="iconfont icon-jiantou"></i></a></li>
+                <li class="bannerNav1"><a href="#">电视 盒子<i class="iconfont icon-jiantou"></i></a></li>
+                <li class="bannerNav1"><a href="#">笔记本 平板<i class="iconfont icon-jiantou"></i></a></li>
+                <li class="bannerNav1"><a href="#">家电 插线板<i class="iconfont icon-jiantou"></i></a></li>
+                <li class="bannerNav1"><a href="#">出行 穿戴<i class="iconfont icon-jiantou"></i></a></li>
+                <li class="bannerNav1"><a href="#">电源 配件<i class="iconfont icon-jiantou"></i></a></li>
+                <li class="bannerNav1"><a href="#">健康 儿童<i class="iconfont icon-jiantou"></i></a></li>
+                <li class="bannerNav1"><a href="#">耳机 影箱<i class="iconfont icon-jiantou"></i></a></li>
+                <li class="bannerNav1"><a href="#">生活 包箱<i class="iconfont icon-jiantou"></i></a></li>
+            </ul>
+<!--            <script>-->
+<!--                window.onload=function() {-->
+<!--                    let lilist = document.querySelectorAll(".bannerNav li");-->
+<!--                    let bannerNav1=document.querySelectorAll("bannerNav1");-->
+<!--                    console.log("bannerNav1");-->
+<!--                    for (let i=0;i<lilist.length;i++){-->
+<!--                        lilist[i].onmouseover=function () {-->
+<!--                            bannerNav1[i].style.display="block";-->
+<!--                        };-->
+<!--                        lilist[i].onmouseout=function () {-->
+<!--                            bannerNav1[i].style.display = "none";-->
+<!--                        };-->
+<!--                    }-->
+<!--                }-->
+<!--            </script>-->
+            <div class="buttonLeft"><i class="iconfont icon-jiantou2"></i></div>
+            <div class="buttonRight"><i class="iconfont icon-jiantou1"></i></div>
+            <div class="rotationPoint ">
+                <div class="totationPoint1"></div>
+                <div class="totationPoint1"></div>
+                <div class="totationPoint1"></div>
+                <div class="totationPoint1"></div>
+                <div class="totationPoint1 totationPoint2"></div>
+            </div>
+
+        </div>
+        <div class="bannerBoxImg">
+            <ul class="bannerBoxImgA">
+                <li class="bannerBoxImgAA">
+                    <a href="#"><i class="iconfont icon-miaosha"></i>
+                        小米秒杀</a>
+                </li>
+                <li class="bannerBoxImgAA">
+                    <a href="#"><i class="iconfont icon-qiye"></i>
+                        企业团购</a>
+                </li>
+                <li class="bannerBoxImgAA">
+                    <a href="#"><i class="iconfont icon-fma"></i>
+                        F码通道</a>
+                </li>
+                <li class="bannerBoxImgAA">
+                    <a href="#"><i class="iconfont icon-dianhuaqia"></i>
+                        米粉卡</a>
+                </li>
+                <li class="bannerBoxImgAA">
+                    <a href="#"><i class="iconfont icon-yijiuhuanxin">
+                    </i>
+                        以旧换新 </a>
+                </li>
+                <li class="bannerBoxImgAA">
+                    <a href="#"><i class="iconfont icon-iconfontshoujichongzhi"></i>
+                        话费充值</a>
+                </li>
+            </ul>
+            <div class="bannerBoxImgB"><a href="#"> <img src="imgbanner/6.jpg"></a></div>
+            <div class="bannerBoxImgB"><a href="#"><img src="imgbanner/7.jpg"></a></div>
+            <div class="bannerBoxImgB"><a href="#"><img src="imgbanner/8.jpg"></a></div>
+        </div>
+    </div>
+</div>
+<div class="gray">
+    <div class="body">
+        <div class="grayA">
+            <p>小米闪购</p>
+            <a href="#">
+                <div class="buttonL">></div>
+            </a>
+            <a href="#">
+                <div class="buttonR"><</div>
+            </a>
+        </div>
+        <div class="grayB">
+            <div class="purBox1">
+                <div class="purBox1A">
+                    <p class="clock">14:00场</p>
+                    <i class="iconfont icon-shandian"></i>
+                    <p class="clockA">距离结束还有</p>
+                    <ul class="black">
+                        <li class="black1"><span>00</span></li>
+                        <i>:</i>
+                        <li class="black1"><span>00</span></li>
+                        <i>:</i>
+                        <li class="black1"><span>00</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="purBoxA">
+                <a href="#">
+                    <div class="purBox">
+                        <img src="imgbanner/9.jpg">
+                        <p class="title">MIJOY 胶带座套装 白色</p>
+                        <p class="desc">结实耐用 轻松便捷</p>
+                        <p class="price"><span>9.9元</span>
+                            <del>19.9元</del>
+                        </p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="purBox purBox-1">
+                        <img src="imgbanner/10.jpg">
+                        <p class="title">MIJOY 胶带座套装 白色</p>
+                        <p class="desc">结实耐用 轻松便捷</p>
+                        <p class="price"><span>9.9元</span>
+                            <del>19.9元</del>
+                        </p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="purBox purBox-2">
+                        <img src="imgbanner/11.jpg">
+                        <p class="title">MIJOY 胶带座套装 白色</p>
+                        <p class="desc">结实耐用 轻松便捷</p>
+                        <p class="price"><span>9.9元</span>
+                            <del>19.9元</del>
+                        </p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="purBox purBox-3">
+                        <img src="imgbanner/12.jpg">
+                        <p class="title">MIJOY 胶带座套装 白色</p>
+                        <p class="desc">结实耐用 轻松便捷</p>
+                        <p class="price"><span>9.9元</span>
+                            <del>19.9元</del>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="box1">
+            <div class="box2">
+                <a href="#">
+                    <div class="boxImg"><img src="imgbanner/13.jpg"></div>
+                </a>
+                <div class="wenzi">
+                    <p class="left">手机</p>
+                    <p class="right"><a href="#">查看全部
+                        <i class="iconfont icon-chakanquanbu"></i></a>
+                    </p>
+                </div>
+                <div class="boxImgA">
+                    <a href="#">
+                        <div class="boxImgAA"><img src="imgbanner/14.jpg">
+                        </div>
+                    </a>
+                    <div class="boxImgAAA">
+                        <ul class="imgA">
+                            <a href="#">
+                                <li class="imgA1">
+                                    <img src="imgbanner/手机1.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="imgA1">
+                                    <img src="imgbanner/手机2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="imgA1">
+                                    <img src="imgbanner/手机3.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="imgA1">
+                                    <img src="imgbanner/手机4.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="imgA1">
+                                    <img src="imgbanner/手机5.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="imgA1">
+                                    <img src="imgbanner/手机1.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="imgA1">
+                                    <img src="imgbanner/手机2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                  <li class="imgA1">
+                                    <img src="imgbanner/手机3.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box2">
+                <a href="#">
+                    <div class="boxImg"><img src="imgbanner/家电.jpg"></div>
+                </a>
+                <div class="wenzi">
+                    <p class="left">家电</p>
+                    <div class="right2">
+                        <a href="#"><p class="right22">电视影音</p></a>
+                        <a href="#"><p class="right22">热门</p></a>
+                    </div>
+                </div>
+                <div class="boxImgA">
+                    <div class="boxImgBBB">
+                        <ul class="boxImgB">
+                            <a href="#">
+                                <li class="boxImgB2">
+                                    <img src="imgbanner/aaaa.jpg">
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/家电2.jpg">
+                                    <div class="o">
+                                        <p class="title">小米Pro 5G</p>
+                                        <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                        <p class="price"><span>3699元</span></p>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/15.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/16.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/17.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB2"><img src="imgbanner/家电1.jpg"></li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/18.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/18.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/19.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <li class="boxImgB3">
+                                <a href="#">
+                                    <div class="top">
+                                        <div class="aaa">
+                                            <p class="air">Air 13.3"2019款</p>
+                                            <p class="yuan">4999元起</p>
+                                        </div>
+                                        <img src="imgbanner/top1.jpg">
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="bottom">
+                                        <div class="bbb">
+                                            <p class="more">浏览更多</p>
+                                            <p class="hot">热门</p>
+                                        </div>
+                                        <i class="iconfont icon-chakangengduo"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <a href="#">
+                    <div class="boxImg"><img src="imgbanner/智能.jpg"></div>
+                </a>
+                <div class="wenzi">
+                    <p class="left">智能</p>
+                    <div class="right2">
+                        <a href="#"><p class="right22">电视影音</p></a>
+                        <a href="#"><p class="right22">热门</p></a>
+                    </div>
+                </div>
+                <div class="boxImgA">
+                    <div class="boxImgBBB">
+                        <ul class="boxImgB">
+                            <a href="#">
+                                <li class="boxImgB2">
+                                    <img src="imgbanner/家电1.jpg">
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能1.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能3.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能4.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB2"><img src="imgbanner/家电1.jpg"></li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能5.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能1.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <li class="boxImgB3">
+                                <a href="#">
+                                    <div class="top">
+                                        <div class="aaa">
+                                            <p class="air">Air 13.3"2019款</p>
+                                            <p class="yuan">4999元起</p>
+                                        </div>
+                                        <img src="imgbanner/top1.jpg">
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="bottom">
+                                        <div class="bbb">
+                                            <p class="more">浏览更多</p>
+                                            <p class="hot">热门</p>
+                                        </div>
+                                        <i class="iconfont icon-chakangengduo"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <a href="#">
+                    <div class="boxImg"><img src="imgbanner/搭配.jpg"></div>
+                </a>
+                <div class="wenzi">
+                    <p class="left">搭配</p>
+                    <div class="right2">
+                        <a href="#"><p class="right22">电视影音</p></a>
+                        <a href="#"><p class="right22">热门</p></a>
+                    </div>
+                </div>
+                <div class="boxImgA">
+                    <div class="boxImgBBB">
+                        <ul class="boxImgB">
+                            <a href="#">
+                                <li class="boxImgB2">
+                                    <img src="imgbanner/cccc.jpg">
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配1.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配3.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配4.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB2"><img src="imgbanner/家电1.jpg"></li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配5.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配1.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <li class="boxImgB3">
+                                <a href="#">
+                                    <div class="top">
+                                        <div class="aaa">
+                                            <p class="air">Air 13.3"2019款</p>
+                                            <p class="yuan">4999元起</p>
+                                        </div>
+                                        <img src="imgbanner/top1.jpg">
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="bottom">
+                                        <div class="bbb">
+                                            <p class="more">浏览更多</p>
+                                            <p class="hot">热门</p>
+                                        </div>
+                                        <i class="iconfont icon-chakangengduo"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <a href="#">
+                    <div class="boxImg"><img src="imgbanner/配件.jpg"></div>
+                </a>
+                <div class="wenzi">
+                    <p class="left">配件</p>
+                    <div class="right2">
+                        <a href="#"><p class="right22">电视影音</p></a>
+                        <a href="#"><p class="right22">热门</p></a>
+                    </div>
+                </div>
+                <div class="boxImgA">
+                    <div class="boxImgBBB">
+                        <ul class="boxImgB">
+                            <a href="#">
+                                <li class="boxImgB2">
+                                    <img src="imgbanner/搭配1.jpg">
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/家电2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配3.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配4.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB2"><img src="imgbanner/家电1.jpg"></li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配3.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配4.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/搭配1.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <li class="boxImgB3">
+                                <a href="#">
+                                    <div class="top">
+                                        <div class="aaa">
+                                            <p class="air">Air 13.3"2019款</p>
+                                            <p class="yuan">4999元起</p>
+                                        </div>
+                                        <img src="imgbanner/top1.jpg">
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="bottom">
+                                        <div class="bbb">
+                                            <p class="more">浏览更多</p>
+                                            <p class="hot">热门</p>
+                                        </div>
+                                        <i class="iconfont icon-chakangengduo"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <a href="#">
+                    <div class="boxImg"><img src="imgbanner/周边.jpg"></div>
+                </a>
+                <div class="wenzi">
+                    <p class="left">周边</p>
+                    <div class="right2">
+                        <a href="#"><p class="right22">电视影音</p></a>
+                        <a href="#"><p class="right22">热门</p></a>
+                    </div>
+                </div>
+                <div class="boxImgA">
+                    <div class="boxImgBBB">
+                        <ul class="boxImgB">
+                            <a href="#">
+                                <li class="boxImgB2">
+                                    <img src="imgbanner/家电1.jpg">
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/家电2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能1.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能4.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB2"><img src="imgbanner/家电1.jpg"></li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能3.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能2.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="boxImgB1">
+                                    <img src="imgbanner/智能1.jpg">
+                                    <p class="title">小米Pro 5G</p>
+                                    <p class="desc">5G双卡全网通，骁龙859plus</p>
+                                    <p class="price"><span>3699元</span></p>
+                                </li>
+                            </a>
+                            <li class="boxImgB3">
+                                <a href="#">
+                                    <div class="top">
+                                        <div class="aaa">
+                                            <p class="air">Air 13.3"2019款</p>
+                                            <p class="yuan">4999元起</p>
+                                        </div>
+                                        <img src="imgbanner/top1.jpg">
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="bottom">
+                                        <div class="bbb">
+                                            <p class="more">浏览更多</p>
+                                            <p class="hot">热门</p>
+                                        </div>
+                                        <i class="iconfont icon-chakangengduo"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="boxImg"><img src="imgbanner/笔.jpg"></div>
+                <div class="wenzi">
+                    <p class="left">视频</p>
+                    <a href="#"><p class="right">查看全部
+                        <i class="iconfont icon-chakanquanbu"></i>
+                    </p></a>
+                </div>
+                <div class="video">
+                    <a href="#">
+                        <div class="video2">
+                            <div class="videoButton">
+                                <img src="imgbanner/video1.jpg">
+                                <div class="videoButton1">
+                                    <div class="videoButton2">
+                                        <i class="iconfont icon-shipin"></i>
+                                    </div>
+                                </div>
+                                <p>小米MIX Alpha 开箱视频</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="video2 video3">
+                            <div class="videoButton">
+                                <img src="imgbanner/video2.jpg">
+                                <div class="videoButton1">
+                                    <div class="videoButton2">
+                                        <i class="iconfont icon-shipin"></i>
+                                    </div>
+                                </div>
+                                <p>小米5新品手机发布会</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="video2 video3">
+                            <div class="videoButton">
+                                <img src="imgbanner/video3.jpg">
+                                <div class="videoButton1">
+                                    <div class="videoButton2">
+                                        <i class="iconfont icon-shipin"></i>
+                                    </div>
+                                </div>
+                                <p>Note8系列发布会</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="video2 video3">
+                            <div class="videoButton">
+                                <img src="imgbanner/video4.jpg">
+                                <div class="videoButton1">
+                                    <div class="videoButton2">
+                                        <i class="iconfont icon-shipin"></i>
+                                    </div>
+                                </div>
+                                <p>小米CC9</p>
+                            </div>
+                        </div>
+                    </a>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="map">
+    <div class="body">
+        <div class="mapA">
+            <ul class="map1">
+                <a href="#">
+                    <li class="map11"><i class="iconfont icon-weixiu"></i>预约维修服务</li>
+                </a>
+                <a href="#">
+                    <li class="map11"><i class="iconfont icon-tian1"></i>7天无理由退货</li>
+                </a>
+                <a href="#">
+                    <li class="map11"><i class="iconfont icon-tian"></i>15天免费换货</li>
+                </a>
+                <a href="#">
+                    <li class="map11"><i class="iconfont icon-liwu"></i>满150包邮</li>
+                </a>
+                <a href="#">
+                    <li class="map11"><i class="iconfont icon-hb-addrss"></i>520余家售后网点</li>
+                </a>
+            </ul>
+        </div>
+        <div class="mapB">
+            <div class="mapB1">
+                <ul class="mapB111">
+                    <li class="big">帮助中心</li>
+                    <a href="#">
+                        <li class="small">账户管理</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">购物指南</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">订单操作</li>
+                    </a>
+                </ul>
+                <ul class="mapB111">
+                    <li class="big">帮助中心</li>
+                    <a href="#">
+                        <li class="small">账户管理</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">购物指南</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">订单操作</li>
+                    </a>
+                </ul>
+                <ul class="mapB111">
+                    <li class="big">帮助中心</li>
+                    <a href="#">
+                        <li class="small">账户管理</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">购物指南</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">订单操作</li>
+                    </a>
+                </ul>
+                <ul class="mapB111">
+                    <li class="big">帮助中心</li>
+                    <a href="#">
+                        <li class="small">账户管理</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">购物指南</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">订单操作</li>
+                    </a>
+                </ul>
+                <ul class="mapB111">
+                    <li class="big">帮助中心</li>
+                    <a href="#">
+                        <li class="small">账户管理</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">购物指南</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">订单操作</li>
+                    </a>
+                </ul>
+                <ul class="mapB111">
+                    <li class="big">帮助中心</li>
+                    <a href="#">
+                        <li class="small">账户管理</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">购物指南</li>
+                    </a>
+                    <a href="#">
+                        <li class="small">订单操作</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="mapB2">
+                <div class="boxA">
+                    <p class="tel">400-100-5678</p>
+                    <p class="time">周一至周日8:00-18:00</p>
+                    <p class="time2">(仅收市话费)</p>
+                    <a href="#">
+                        <a href="#"><div class="man">
+                            <i class="iconfont icon-duihuakuang"></i>
+                            <span>人工服务</span>
+                        </div></a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <div class="body">
+        <img src="img/logo.png">
+        <div class="eee">
+            <div class="www">
+                <ul class="zzz">
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a><span>|</span></li>
+                    <li><a href="#">小米商城</a></li>
+                </ul>
+            </div>
+            <p class="qqq">© mi.com <a href="#">京ICP证110507号</a> 京ICP备10046444号 京公网安备11010802020134号 京网文[2017]1530-131号
+            </p>
+            <p class="qqq">（京）网械平台备字（2018）第00005号 互联网药品信息服务资格证 (京) -非经营性-2014-0090 营业执照 医疗器械公告</p>
+            <p class="qqq">增值电信业务许可证 网络食品经营备案（京）【2018】WLSPJYBAHF-12 食品经营许可证</p>
+            <p class="qqq">违法和不良信息举报电话：185-0130-1238 知识产权侵权投诉 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+        </div>
+        <ul class="v-logo">
+            <a href="#">
+                <li class="v-logo1">
+                    <img src="imgbanner/v-logo.png" alt="">
+                </li>
+            </a>
+            <a href="#">
+                <li class="v-logo1">
+                    <img src="imgbanner/v-logo-1.png" alt="">
+                </li>
+            </a>
+            <a href="#">
+                <li class="v-logo1">
+                    <img src="imgbanner/v-logo-2.png" alt="">
+                </li>
+            </a>
+            <a href="#">
+                <li class="v-logo1">
+                    <img src="imgbanner/v-logo-3.png" alt="">
+                </li>
+            </a>
+            <a href="#">
+                <li class="v-logo1">
+                    <img src="imgbanner/v-logo-4.png" alt="">
+                </li>
+            </a>
+            <a href="#">
+                <li class="v-logo1">
+
+                </li>
+            </a>
+        </ul>
+        <p class="copyright-bottom">探索黑科技，小米为发烧而生</p>
+    </div>
+</div>
+<div class="fix">
+    <ul class="fixA">
+        <a href="#">
+            <li class="fixAA">
+                <i class="iconfont icon-Shapex"></i>
+                <p class="fix-1">手机APP</p>
+            </li>
+        </a>
+        <a href="#">
+            <li class="fixAA">
+                <i class="iconfont icon-ren"></i>
+                <p class="fix-1">个人中心</p>
+            </li>
+        </a>
+        <a href="#">
+            <li class="fixAA">
+                <i class="iconfont icon-shouhoufuwu"></i>
+                <p class="fix-1">售后服务</p>
+            </li>
+        </a>
+        <a href="#">
+            <li class="fixAA">
+                <i class="iconfont icon-kefuerjirengongfuwumianxing"></i>
+                <p class="fix-1">人工服务</p>
+            </li>
+        </a>
+        <a href="#">
+            <li class="fixAA fixAAA">
+                <i class="iconfont icon-gouwuchekong"></i>
+                <p class="fix-1">购物车</p>
+            </li>
+        </a>
+    </ul>
+    <a href="#">
+        <div class="goBack">
+            <i class="iconfont icon-huidingbu"></i>
+            <p class="fix-1">回到顶部</p>
+        </div>
+    </a>
+</div>
+
+</body>
+</html>
